@@ -19,6 +19,8 @@ namespace AddressBookService_LINQ_And_DataTable
             table.Columns.Add("Zip", typeof(int));
             table.Columns.Add("PhoneNumber", typeof(long));
             table.Columns.Add("Email", typeof(string));
+            table.Columns.Add("AddressBookType", typeof(string));
+            table.Columns.Add("AddressBookName", typeof(string));
 
 
             table.Rows.Add("Tina", "Sharma", "House no 4", "TSK", "Assam", 786643, 997325546, "tina@gmail.com");
@@ -36,7 +38,7 @@ namespace AddressBookService_LINQ_And_DataTable
             {
 
                 Console.Write("First Name : " + contact.Field<string>("FirstName") + " " + "Last Name : " + contact.Field<string>("LastName") + " " + "Address : " + contact.Field<string>("Address") + " " + "City : " + contact.Field<string>("City") + " " + "State : " + contact.Field<string>("State")
-                    + " " + "Zip : " + contact.Field<int>("Zip") + " " + "Phone Number : " + contact.Field<long>("PhoneNumber") + " " + "Email : " + contact.Field<string>("Email") + " ");
+                    + " " + "Zip : " + contact.Field<int>("Zip") + " " + "Phone Number : " + contact.Field<long>("PhoneNumber") + " " + "Email : " + contact.Field<string>("Email") + " " + "AddressBookType : " + contact.Field<string>("AddressBookType") + " " + "AddressBookName : " + contact.Field<string>("AddressBookName") + " ");
                 Console.WriteLine("\n------------------------------------");
             }
         }

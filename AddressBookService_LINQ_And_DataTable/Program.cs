@@ -11,10 +11,11 @@ namespace AddressBookService_LINQ_And_DataTable
             DataTable dataTable = addressBookTable.AddAddressBookDataTable();
             // addressBookTable.DisplayContacts(dataTable);
             //addressBookTable.EditContact(dataTable);
-           // addressBookTable.DeleteContact(dataTable);
-           // addressBookTable.RetrieveContactBelongingToCityOrState(dataTable);
+            // addressBookTable.DeleteContact(dataTable);
+            // addressBookTable.RetrieveContactBelongingToCityOrState(dataTable);
             //addressBookTable.GetSizeByCityOrState(dataTable);
-            addressBookTable.SortContacts(dataTable);
+            //addressBookTable.SortContacts(dataTable);
+            addressBookTable.DisplayContacts(dataTable);
         }
     }
 }
