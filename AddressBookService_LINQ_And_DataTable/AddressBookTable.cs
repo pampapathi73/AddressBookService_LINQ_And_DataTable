@@ -82,6 +82,11 @@ namespace AddressBookService_LINQ_And_DataTable
             Console.WriteLine(" : {0} ", contacts);
         }
 
-       
+        public void SortContacts(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                           .OrderBy(x => x.Field<string>("FirstName"));
+            DisplayContacts(contacts.CopyToDataTable());
+        }
     }
 }
