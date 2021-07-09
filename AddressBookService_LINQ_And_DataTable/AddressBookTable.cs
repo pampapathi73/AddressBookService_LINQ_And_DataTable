@@ -28,6 +28,12 @@ namespace AddressBookService_LINQ_And_DataTable
             table.Rows.Add("Prakash", "Baruah", "Panji", "Panaji", "Goa", 43254, 7777743210, "prakash@gmail.com");
             table.Rows.Add("Rama", "Phukon", "Park street", "Kolkata", "West Bangal", 43254, 7877743990, "Rama@gmail.com");
             table.Rows.Add("Rekha", "Chetia", "GH road", "Ghy", "Assam", 43254, 7888743210, "rekha@gmail.com");
+            
+            table.Rows.Add("Tina", "Sharma", "House no 4", "TSK", "Assam", 786643, 997325546, "tina@gmail.com","Friends","Book1");
+            table.Rows.Add("Asha", "Das", "ITPL", "Bangalore", "Karnataka", 40002, 999000880, "asha@gmail.com","Family","Book3");
+            table.Rows.Add("Prakash", "Baruah", "Panji", "Panaji", "Goa", 43254, 7777743210, "prakash@gmail.com","Profession","Book2");
+            table.Rows.Add("Rama", "Phukon", "Park street", "Kolkata", "West Bangal", 43254, 7877743990, "Rama@gmail.com","Friends","Book4");
+            table.Rows.Add("Rekha", "Chetia", "GH road", "Ghy", "Assam", 43254, 7888743210, "rekha@gmail.com","Profession","Book6");
 
             return table;
         }
