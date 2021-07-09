@@ -20,11 +20,12 @@ namespace AddressBookService_LINQ_And_DataTable
             table.Columns.Add("PhoneNumber", typeof(long));
             table.Columns.Add("Email", typeof(string));
 
-            table.Rows.Add("mani", "Sharma", "House no 4", "TSK", "Assam", 786643, 997325546, "Mani@gmail.com");
-            table.Rows.Add("Alok", "Das", "ITPL", "Bangalore", "Karnataka", 40002, 999000880, "Alok@gmail.com");
-            table.Rows.Add("Mounesh", "Baruah", "Panji", "Panaji", "Goa", 43254, 7777743210, "Mounesh@gmail.com");
+
+            table.Rows.Add("Tina", "Sharma", "House no 4", "TSK", "Assam", 786643, 997325546, "tina@gmail.com");
+            table.Rows.Add("Asha", "Das", "ITPL", "Bangalore", "Karnataka", 40002, 999000880, "asha@gmail.com");
+            table.Rows.Add("Prakash", "Baruah", "Panji", "Panaji", "Goa", 43254, 7777743210, "prakash@gmail.com");
             table.Rows.Add("Rama", "Phukon", "Park street", "Kolkata", "West Bangal", 43254, 7877743990, "Rama@gmail.com");
-            table.Rows.Add("rahul", "Chetia", "GH road", "Ghy", "Assam", 43254, 7888743210, "rahul@gmail.com");
+            table.Rows.Add("Rekha", "Chetia", "GH road", "Ghy", "Assam", 43254, 7888743210, "rekha@gmail.com");
 
             return table;
         }
@@ -33,11 +34,26 @@ namespace AddressBookService_LINQ_And_DataTable
             var contacts = addresstable.Rows.Cast<DataRow>();
             foreach (var contact in contacts)
             {
-                Console.WriteLine("\n------------------------------------");
+
                 Console.Write("First Name : " + contact.Field<string>("FirstName") + " " + "Last Name : " + contact.Field<string>("LastName") + " " + "Address : " + contact.Field<string>("Address") + " " + "City : " + contact.Field<string>("City") + " " + "State : " + contact.Field<string>("State")
                     + " " + "Zip : " + contact.Field<int>("Zip") + " " + "Phone Number : " + contact.Field<long>("PhoneNumber") + " " + "Email : " + contact.Field<string>("Email") + " ");
+                Console.WriteLine("\n------------------------------------");
             }
         }
-    
+
+        public void EditContact(DataTable table)
+        {
+            var contacts = table.AsEnumerable().Where(x => x.Field<string>("FirstName") == "Asha");
+            foreach (var contact in contacts)
+            {
+                contact.SetField("LastName", "Das");
+                contact.SetField("City", "Mumbai");
+                contact.SetField("State", "Maharashtra");
+            }
+
+            Console.WriteLine("The Contact is updated succesfully\n");
+            DisplayContacts(contacts.CopyToDataTable());
+        }
+
     }
 }

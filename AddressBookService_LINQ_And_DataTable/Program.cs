@@ -7,10 +7,10 @@ namespace AddressBookService_LINQ_And_DataTable
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to AddressBookService LINQ And DataTable ");
             AddressBookTable addressBookTable = new AddressBookTable();
             DataTable dataTable = addressBookTable.AddAddressBookDataTable();
-            addressBookTable.DisplayContacts(dataTable);
+            // addressBookTable.DisplayContacts(dataTable);
+            addressBookTable.EditContact(dataTable);
         }
     }
 }
