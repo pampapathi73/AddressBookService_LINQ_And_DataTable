@@ -90,5 +90,17 @@ namespace AddressBookService_LINQ_And_DataTable
                            .OrderBy(x => x.Field<string>("FirstName"));
             DisplayContacts(contacts.CopyToDataTable());
         }
+        public void GetCountByType(DataTable table)
+        {
+            var friendsContacts = table.Rows.Cast<DataRow>()
+                                         .Where(x => x["AddressBookType"].Equals("Friends")).Count();
+            Console.WriteLine("'Friends' : {0} ", friendsContacts);
+            var familyContact = table.Rows.Cast<DataRow>()
+                             .Where(x => x["AddressBookType"].Equals("Family")).Count();
+            Console.WriteLine("'Family' : {0} ", familyContact);
+            var ProfessionalContact = table.Rows.Cast<DataRow>()
+                             .Where(x => x["AddressBookType"].Equals("Profession")).Count();
+            Console.WriteLine("'Profession' : {0} ", ProfessionalContact);
+        }
     }
 }
