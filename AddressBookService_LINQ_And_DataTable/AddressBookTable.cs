@@ -75,5 +75,13 @@ namespace AddressBookService_LINQ_And_DataTable
             }
 
         }
+        public void GetSizeByCityOrState(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                             .GroupBy(x => x["State"].Equals("Assam")).Count();
+            Console.WriteLine(" : {0} ", contacts);
+        }
+
+       
     }
 }
